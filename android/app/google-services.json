@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "506819980388",
+    "project_id": "mynotes-a7620",
+    "storage_bucket": "mynotes-a7620.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506819980388:android:94d785477969e5044e4371",
+        "android_client_info": {
+          "package_name": "com.firstaap.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPSdK0um6TzLsm8xaoKHsBDIkjvBQ6TMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506819980388:android:daf0ab3a9c7c15684e4371",
+        "android_client_info": {
+          "package_name": "com.makingstuffup.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPSdK0um6TzLsm8xaoKHsBDIkjvBQ6TMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
