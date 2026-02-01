@@ -1,8 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mynotes/views/login_veiw.dart';
+import 'package:mynotes/views/register_view.dart';
 // import 'package:mynotes/views/login_veiw.dart';
 import 'firebase_options.dart';
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -17,6 +21,10 @@ void main() async {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const HomePage(),
+      routes: {
+        '/login': (context) => const LoginView(),
+        '/register': (context) => const RegisterView(),
+      },
     ),);
 }
 
@@ -26,13 +34,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home.'),
-        backgroundColor: Colors.blue,
-        ),
-
-      body: FutureBuilder(
+    return FutureBuilder(
         future: Firebase.initializeApp(
           options: DefaultFirebaseOptions.currentPlatform
         ),
@@ -40,27 +42,25 @@ class HomePage extends StatelessWidget {
           switch (snapshot.connectionState) {
             case ConnectionState.done:
             
-            final user = FirebaseAuth.instance.currentUser;
-            if (user?.emailVerified ?? false){
-              print('You are verified');
-            } else {
-              print('Verify it');
-            }
+            // final user = FirebaseAuth.instance.currentUser;
+            // if (user?.emailVerified ?? false){
+            //   return Text('Done.');              
+            // } else {
+            //   return const VerifyEmailView();
+            // }
+            return const LoginView();
 
-
-              return Text('Done.');
+              
             default:
-              return const Text("Loading...");
+              return const CircularProgressIndicator();
 
 
           }
           
         }
      
-      ),
-
-
-    );
+      );
   }
 
 }
+
