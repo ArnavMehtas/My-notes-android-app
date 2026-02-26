@@ -1,7 +1,7 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'dart:developer';
 
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -11,7 +11,7 @@ import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verify_email_view.dart';
 // import 'package:mynotes/views/login_veiw.dart';
 import 'firebase_options.dart';
-import 'dart:developer' as devtools show log;
+// import 'dart:developer' as devtools show log;
 
 
 void main() async {
@@ -29,8 +29,9 @@ void main() async {
       ),
       home: const HomePage(),
       routes: {
-        '/login': (context) => const LoginView(),
-        '/register': (context) => const RegisterView(),
+        '/login/': (context) => const LoginView(),
+        '/register/': (context) => const RegisterView(),
+        '/notes/': (context) => const NotesView(),
       },
     ),);
 }
@@ -96,7 +97,7 @@ class _NotesViewState extends State<NotesView> {
           PopupMenuButton<MenuAction> ( 
 
             onSelected: (value) async{
-              switch (value) {
+              switch (value) {   
                 case MenuAction.logout:
                   final shouldLougout = await showLogOutDialog(context);
                   if (shouldLougout) {
