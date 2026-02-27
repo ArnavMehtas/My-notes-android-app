@@ -12,7 +12,7 @@ import 'package:mynotes/views/verify_email_view.dart';
 // import 'package:mynotes/views/login_veiw.dart';
 import 'firebase_options.dart';
 // import 'dart:developer' as devtools show log;
-
+import 'constants/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,9 +29,9 @@ void main() async {
       ),
       home: const HomePage(),
       routes: {
-        '/login/': (context) => const LoginView(),
-        '/register/': (context) => const RegisterView(),
-        '/notes/': (context) => const NotesView(),
+        loginRoute : (context) => const LoginView(),
+        registerRoute: (context) => const RegisterView(),
+        notesRoute: (context) => const NotesView(),
       },
     ),);
 }
@@ -102,7 +102,7 @@ class _NotesViewState extends State<NotesView> {
                   final shouldLougout = await showLogOutDialog(context);
                   if (shouldLougout) {
                     await FirebaseAuth.instance.signOut();
-                    Navigator.of(context).pushNamedAndRemoveUntil('/login', (_) => false);
+                    Navigator.of(context).pushNamedAndRemoveUntil(loginRoute, (_) => false);
                   } 
               }
             },
